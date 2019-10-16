@@ -1,4 +1,4 @@
-node('feature2'){
+node('master'){
    
    stage('git checkout'){
                   git 'https://github.com/mythribhay/Inglibrary'
