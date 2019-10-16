@@ -1,4 +1,14 @@
 node('master'){
+    tools {
+        maven 'apache-maven-3.0.1' 
+    }
+    stages {
+        stage('Example') {
+            steps {
+                sh 'mvn --version'
+            }
+        }
+    }
    stage('git checkout'){
                   git 'https://github.com/ajitesh17/INGPRODUCTS'
               }
