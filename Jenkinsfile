@@ -15,6 +15,8 @@ node('master'){
                     echo "M2_HOME = ${M2_HOME}"
                 '''
             }
+        }
+    }
    stage('java build'){
              sh 'mvn clean install sonar:sonar -Dsonar.password=admin -Dsonar.login=admin'
          }
@@ -22,4 +24,4 @@ node('master'){
              sh 'export JENKINS_NODE_COOKIE=dontKillMe ;nohup java -Dspring.profiles.active=dev -jar $WORKSPACE/target/*.jar &'
          }
 }
-    }
+    
