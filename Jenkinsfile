@@ -1,13 +1,10 @@
 node('master'){
    
-        stage('Example') {
-                sh 'mvn --version'
-            }
    stage('git checkout'){
                   git 'https://github.com/ajitesh17/INGPRODUCTS'
               }
    stage('java build'){
-             sh 'mvn clean install sonar:sonar -Dsonar.password=admin -Dsonar.login=admin'
+             sh '/opt/maven/bin/mvn clean install sonar:sonar -Dsonar.password=admin -Dsonar.login=admin'
          }
 
    stage('Running java backend application'){
