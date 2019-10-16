@@ -1,10 +1,8 @@
 node('master'){
    
         stage('Example') {
-            steps {
                 sh 'mvn --version'
             }
-        }
    stage('git checkout'){
                   git 'https://github.com/ajitesh17/INGPRODUCTS'
               }
