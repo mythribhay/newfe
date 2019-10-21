@@ -5,7 +5,7 @@ node('master'){
               }
    
    stage('Static code analysis'){
-             sh '/opt/maven/bin/mvn sonar:sonar -Dsonar.password=admin -Dsonar.login=admin'
+             sh '/opt/maven/bin/mvn clean verify sonar:sonar -Dsonar.password=admin -Dsonar.login=admin'
          }
    stage('java build'){
              sh '/opt/maven/bin/mvn clean install'
